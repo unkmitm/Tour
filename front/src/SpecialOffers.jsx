@@ -223,7 +223,7 @@ function SpecialOffers() {
         {/* Tour Cards Container */}
         <div
           ref={containerRef}
-          className="flex gap-6 overflow-x-auto scrollbar-hide special-offers-scroll pb-4 relative"
+          className="flex gap-6 overflow-x-auto scrollbar-hide special-offers-scroll pb-4"
           style={{
             scrollbarWidth: "none",
             msOverflowStyle: "none",
@@ -235,10 +235,6 @@ function SpecialOffers() {
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
         >
-          {/* Scroll indicator overlay */}
-          <div className="absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-white via-white/80 to-transparent pointer-events-none z-10" />
-          <div className="absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-white via-white/80 to-transparent pointer-events-none z-10" />
-
           {specialOffers.map((offer, index) => (
             <div
               key={offer.id}
@@ -249,11 +245,11 @@ function SpecialOffers() {
               }}
             >
               {/* Image Section */}
-              <div className="relative h-48 bg-gray-200">
+              <div className="relative h-48 bg-gray-200 pointer-events-none">
                 <img
                   src={offer.image}
                   alt={offer.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover pointer-events-none"
                   loading="lazy"
                   onError={(e) => {
                     e.target.src =
