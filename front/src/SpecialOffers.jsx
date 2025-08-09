@@ -245,7 +245,7 @@ function SpecialOffers() {
               }}
             >
               {/* Image Section */}
-              <div className="relative h-48 bg-gray-200 pointer-events-none">
+              <div className="relative h-48 bg-gray-200">
                 <img
                   src={offer.image}
                   alt={offer.title}
