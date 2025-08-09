@@ -19,7 +19,9 @@ const mockRecentSearches = [
 function RecentSearches() {
   const [searches, setSearches] = useState(mockRecentSearches);
 
-
+  const clearAll = () => {
+    setSearches([]);
+  };
 
   const handleSearchClick = (search) => {
     // Navigate to search results or pre-fill search box
@@ -34,12 +36,22 @@ function RecentSearches() {
     <div className="w-full bg-gray-50 py-6">
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex items-center justify-between mb-4 rtl">
+          {/* Title with icon */}
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
               <ArrowPathIcon className="w-5 h-5 text-white" />
             </div>
             <h3 className="text-lg font-bold text-gray-900">جستجوهای اخیر</h3>
           </div>
+
+          {/* Clear All Button */}
+          <button
+            onClick={clearAll}
+            className="text-blue-600 hover:text-blue-700 font-medium text-sm transition-colors"
+            type="button"
+          >
+            پاک کردن همه
+          </button>
         </div>
 
         <div className="relative">
