@@ -68,7 +68,7 @@ function SearchBox() {
   };
 
   return (
-    <div className="w-full flex justify-center -mt-20 z-10 relative">
+    <div className="w-full flex justify-center -mt-20 z-10 relative font-persian">
       <div className="bg-white rounded-3xl shadow p-8 w-[90%] max-w-6xl flex flex-col gap-6 border border-gray-200">
         {/* Tabs (no bottom divider line) */}
         <div className="flex gap-8 pb-2 rtl">

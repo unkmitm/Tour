@@ -1,13 +1,14 @@
 import { Routes, Route, useLocation, useParams } from "react-router-dom";
 import Header from "./Header";
 import SearchBox from "./SearchBox";
+import RecentSearches from "./RecentSearches";
 import TourPage from "./pages/TourPage";
 
 function Home() {
   return (
     <>
       <SearchBox />
-      <div className="p-8 text-center text-2xl">صفحه اصلی</div>
+      <RecentSearches />
     </>
   );
 }

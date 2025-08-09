@@ -5,13 +5,28 @@ function Dropdown({ open, items, onClose, onItemClick }) {
 
   useEffect(() => {
     if (!open) return;
+
     function handleClick(e) {
       if (ref.current && !ref.current.contains(e.target)) {
         onClose();
       }
     }
-    document.addEventListener("mousedown", handleClick);
-    return () => document.removeEventListener("mousedown", handleClick);
+
+    function handleKeyDown(e) {
+      if (e.key === "Escape") {
+        onClose();
+      }
+    }
+    const timeoutId = setTimeout(() => {
+      document.addEventListener("mousedown", handleClick);
+      document.addEventListener("keydown", handleKeyDown);
+    }, 100);
+
+    return () => {
+      clearTimeout(timeoutId);
+      document.removeEventListener("mousedown", handleClick);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
   }, [open, onClose]);
 
   if (!open) return null;
@@ -19,12 +34,12 @@ function Dropdown({ open, items, onClose, onItemClick }) {
   return (
     <div
       ref={ref}
-      className="absolute right-0 mt-2 w-56 bg-white rounded-xl shadow-lg py-4 z-20 text-right"
+      className="absolute right-0 mt-2 w-56 bg-white rounded-xl shadow-lg py-4 z-20 text-right border border-gray-200"
     >
       {items.map((d, i) => (
         <button
           key={i}
-          className="flex items-center gap-2 px-6 py-2 hover:bg-gray-50 cursor-pointer w-full text-right"
+          className="flex items-center gap-2 px-6 py-2 hover:bg-gray-50 cursor-pointer w-full text-right transition-colors"
           onClick={() => onItemClick && onItemClick(d.path)}
           type="button"
         >

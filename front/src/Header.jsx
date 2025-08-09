@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   ChevronDownIcon,
   PhoneIcon,
@@ -42,6 +42,21 @@ const navItems = [
 function Header() {
   const [openDropdown, setOpenDropdown] = useState(null);
   const navigate = useNavigate();
+  const headerRef = useRef(null);
+
+  // Close dropdown when clicking outside the header
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (headerRef.current && !headerRef.current.contains(event.target)) {
+        setOpenDropdown(null);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const handleDropdown = (id) => {
     setOpenDropdown((prev) => (prev === id ? null : id));
@@ -62,7 +77,10 @@ function Header() {
   };
 
   return (
-    <div className="w-full bg-white shadow flex flex-col rtl font-sans">
+    <div
+      ref={headerRef}
+      className="w-full bg-white shadow flex flex-col rtl font-persian"
+    >
       <header className="flex items-center justify-between px-6 py-3 border-b">
         {/* Logo */}
         <div className="flex items-center gap-2">
