@@ -1,6 +1,7 @@
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation, useParams } from "react-router-dom";
 import Header from "./Header";
 import SearchBox from "./SearchBox";
+import TourPage from "./pages/TourPage";
 
 function Home() {
   return (
@@ -16,24 +17,15 @@ function InternalTours() {
 function ExternalTours() {
   return <div className="p-8 text-center text-2xl">تورهای خارجی</div>;
 }
-function JungleTour() {
-  return <div className="p-8 text-center text-2xl">تورهای جنگلی</div>;
-}
-function SouthTour() {
-  return <div className="p-8 text-center text-2xl">جنوب گردی</div>;
-}
-function BeachTour() {
-  return <div className="p-8 text-center text-2xl">تورهای ساحلی</div>;
-}
-function MountainTour() {
-  return <div className="p-8 text-center text-2xl">کوه‌نوردی</div>;
-}
-function NorthTour() {
-  return <div className="p-8 text-center text-2xl">شمال</div>;
-}
-function CampingTour() {
-  return <div className="p-8 text-center text-2xl">کمپینگ</div>;
-}
+
+const internalTours = [
+  { path: "jungle", title: "تورهای جنگلی" },
+  { path: "south", title: "جنوب گردی" },
+  { path: "beach", title: "تورهای ساحلی" },
+  { path: "mountain", title: "کوه‌نوردی" },
+  { path: "north", title: "شمال" },
+  { path: "camping", title: "کمپینگ" },
+];
 
 function useQuery() {
   const { search } = useLocation();
@@ -69,6 +61,21 @@ function SearchResults() {
   );
 }
 
+function CountryPage() {
+  const { country } = useParams();
+  const names = {
+    turkey: "ترکیه",
+    uae: "امارات",
+    armenia: "ارمنستان",
+    azerbaijan: "آذربایجان",
+    qatar: "قطر",
+    oman: "عمان",
+    georgia: "گرجستان",
+  };
+  const name = names[country] || country;
+  return <div className="rtl p-8 text-right text-2xl">صفحه تورهای {name}</div>;
+}
+
 function App() {
   return (
     <>
@@ -77,12 +84,14 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/internal" element={<InternalTours />} />
         <Route path="/external" element={<ExternalTours />} />
-        <Route path="/internal/jungle" element={<JungleTour />} />
-        <Route path="/internal/south" element={<SouthTour />} />
-        <Route path="/internal/beach" element={<BeachTour />} />
-        <Route path="/internal/mountain" element={<MountainTour />} />
-        <Route path="/internal/north" element={<NorthTour />} />
-        <Route path="/internal/camping" element={<CampingTour />} />
+        {internalTours.map((tour) => (
+          <Route
+            key={tour.path}
+            path={`/internal/${tour.path}`}
+            element={<TourPage title={tour.title} />}
+          />
+        ))}
+        <Route path="/external/:country" element={<CountryPage />} />
         <Route path="/search" element={<SearchResults />} />
       </Routes>
     </>

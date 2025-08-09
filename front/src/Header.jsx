@@ -27,7 +27,15 @@ const navItems = [
     label: "تورهای خارجی",
     id: "external",
     path: "/external",
-    dropdown: [],
+    dropdown: [
+      { label: "ترکیه", icon: "🇹🇷", path: "/external/turkey" },
+      { label: "امارات", icon: "🇦🇪", path: "/external/uae" },
+      { label: "ارمنستان", icon: "🇦🇲", path: "/external/armenia" },
+      { label: "آذربایجان", icon: "🇦🇿", path: "/external/azerbaijan" },
+      { label: "قطر", icon: "🇶🇦", path: "/external/qatar" },
+      { label: "عمان", icon: "🇴🇲", path: "/external/oman" },
+      { label: "گرجستان", icon: "🇬🇪", path: "/external/georgia" },
+    ],
   },
 ];
 

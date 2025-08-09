@@ -8,6 +8,15 @@ const TABS = [
 ];
 
 const CITIES = ["تهران", "شیراز", "اصفهان", "رشت", "تبریز"];
+const COUNTRIES = [
+  "ترکیه",
+  "امارات",
+  "ارمنستان",
+  "آذربایجان",
+  "قطر",
+  "عمان",
+  "گرجستان",
+];
 
 function SearchBox() {
   const navigate = useNavigate();
@@ -19,20 +28,37 @@ function SearchBox() {
   const [destinationOpen, setDestinationOpen] = useState(false);
   const [error, setError] = useState("");
 
+  const isExternal = tab === "external";
+  const destinationOptions = isExternal ? COUNTRIES : CITIES;
+  const destinationPlaceholder = isExternal
+    ? "انتخاب کشور مقصد"
+    : "انتخاب شهر مقصد";
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!origin || !destination) {
       setError("لطفاً مبدا و مقصد را انتخاب کنید.");
       return;
     }
-    if (origin === destination) {
+    if (!CITIES.includes(origin)) {
+      setError(
+        "مبدا فقط از میان شهرهای مجاز است: تهران، شیراز، اصفهان، رشت، تبریز."
+      );
+      return;
+    }
+    if (!destinationOptions.includes(destination)) {
+      setError(
+        isExternal
+          ? "کشور مقصد را از لیست انتخاب کنید."
+          : "شهر مقصد را از لیست انتخاب کنید."
+      );
+      return;
+    }
+    if (!isExternal && origin === destination) {
       setError("انتخاب مبدا و مقصد یکسان مجاز نیست.");
       return;
     }
-    if (!CITIES.includes(origin) || !CITIES.includes(destination)) {
-      setError("فقط انتخاب از میان شهرهای مشخص شده مجاز است.");
-      return;
-    }
+
     setError("");
     navigate(
       `/search?type=${tab}&origin=${encodeURIComponent(
@@ -44,7 +70,7 @@ function SearchBox() {
   return (
     <div className="w-full flex justify-center -mt-20 z-10 relative">
       <div className="bg-white rounded-3xl shadow p-8 w-[90%] max-w-6xl flex flex-col gap-6 border border-gray-200">
-        {/* Tabs */}
+        {/* Tabs (no bottom divider line) */}
         <div className="flex gap-8 pb-2 rtl">
           {TABS.map((t) => (
             <button
@@ -54,7 +80,13 @@ function SearchBox() {
                   ? "text-blue-600 border-blue-600"
                   : "text-gray-500 border-transparent hover:text-blue-600"
               }`}
-              onClick={() => setTab(t.id)}
+              onClick={() => {
+                setTab(t.id);
+                setDestination("");
+                setOriginOpen(false);
+                setDestinationOpen(false);
+                setError("");
+              }}
               type="button"
             >
               {t.label}
@@ -70,6 +102,7 @@ function SearchBox() {
           >
             جستجو
           </button>
+
           {/* Destination */}
           <div className="flex-1">
             <label className="block text-right text-gray-500 mb-1 pr-2">
@@ -87,28 +120,29 @@ function SearchBox() {
                 <span
                   className={destination ? "text-gray-900" : "text-gray-400"}
                 >
-                  {destination || "انتخاب شهر مقصد"}
+                  {destination || destinationPlaceholder}
                 </span>
                 <ChevronDownIcon className="w-5 h-5 text-gray-400" />
               </button>
               {destinationOpen && (
                 <div className="absolute right-0 left-0 mt-2 bg-white border rounded-xl shadow-lg z-20 max-h-48 overflow-auto">
-                  {CITIES.map((city) => (
+                  {destinationOptions.map((opt) => (
                     <div
-                      key={city}
+                      key={opt}
                       className="px-4 py-2 hover:bg-blue-50 cursor-pointer text-right"
                       onClick={() => {
-                        setDestination(city);
+                        setDestination(opt);
                         setDestinationOpen(false);
                       }}
                     >
-                      {city}
+                      {opt}
                     </div>
                   ))}
                 </div>
               )}
             </div>
           </div>
+
           {/* Origin */}
           <div className="flex-1">
             <label className="block text-right text-gray-500 mb-1 pr-2">
