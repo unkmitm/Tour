@@ -3,6 +3,7 @@ import Header from "./Header";
 import SearchBox from "./SearchBox";
 import RecentSearches from "./RecentSearches";
 import SpecialOffers from "./SpecialOffers";
+import LifeSection from "./LifeSection";
 import TourPage from "./pages/TourPage";
 import CountryPage from "./pages/CountryPage";
 import SearchResults from "./pages/SearchResults";
@@ -13,6 +14,7 @@ function Home() {
       <SearchBox />
       <RecentSearches />
       <SpecialOffers />
+      <LifeSection />
     </>
   );
 }
