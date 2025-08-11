@@ -28,13 +28,9 @@ function TourCard({ tour }) {
           <h4 className="font-semibold text-gray-700 mb-2">
             ویژگی‌های برجسته:
           </h4>
-          <ul className="space-y-1">
+          <ul className="space-y-1 text-right">
             {tour.highlights.map((highlight, index) => (
-              <li
-                key={index}
-                className="text-sm text-gray-600 flex items-center flex-row-reverse"
-              >
-                <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+              <li key={index} className="text-sm text-gray-600">
                 {highlight}
               </li>
             ))}
@@ -43,13 +39,9 @@ function TourCard({ tour }) {
 
         <div className="mb-6">
           <h4 className="font-semibold text-gray-700 mb-2">شامل:</h4>
-          <ul className="space-y-1">
+          <ul className="space-y-1 text-right">
             {tour.includes.map((item, index) => (
-              <li
-                key={index}
-                className="text-sm text-gray-600 flex items-center flex-row-reverse"
-              >
-                <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+              <li key={index} className="text-sm text-gray-600">
                 {item}
               </li>
             ))}
