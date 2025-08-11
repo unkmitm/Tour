@@ -1,6 +1,5 @@
 import Header from "./Header";
-import SearchBox from "./search/SearchBox";
-import RecentSearches from "./search/RecentSearches";
+
 import SpecialOffers from "./pages/SpecialOffers";
 import LifeSection from "./components/sections/LifeSection";
 import CountryPage from "./pages/CountryPage";
@@ -15,14 +14,16 @@ import NorthTours from "./components/tours/NorthTours";
 import CampingTours from "./components/tours/CampingTours";
 import Footer from "./Footer";
 import SignUp from "./components/common/pages/SignUp";
+import SearchBox from "./search/searchbox.jsx";
+import RecentSearches from "./search/recentsearches.jsx";
 import Login from "./components/common/pages/Login";
 
 export {
   Header,
-  SearchBox,
   RecentSearches,
   SpecialOffers,
   LifeSection,
+  SearchBox,
   CountryPage,
   SearchResults,
   DomesticTours,
