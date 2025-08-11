@@ -167,7 +167,8 @@ function SpecialOffers() {
   };
 
   return (
-    <div className="w-full bg-white py-8 font-persian">
+    <div className="w-full bg-white py-8 font-persian rtl">
+      {" "}
       <div className="max-w-6xl mx-auto px-6">
         {/* Header Section */}
         <div className="flex items-center justify-between mb-6 rtl">
@@ -176,7 +177,9 @@ function SpecialOffers() {
             <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
               <ClockIcon className="w-6 h-6 text-white" />
             </div>
-            <h2 className="text-2xl font-bold text-gray-900">پیشنهادات ویژه</h2>
+            <h2 className="text-2xl font-bold text-gray-900 text-right">
+              پیشنهادات ویژه
+            </h2>{" "}
           </div>
 
           {/* Navigation Controls */}
@@ -264,7 +267,7 @@ function SpecialOffers() {
 
                 {/* Favorite Icon */}
                 <button
-                  className="absolute top-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-gray-50 transition-colors hover:scale-110"
+                  className="absolute top-3 left-3 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-gray-50 transition-colors hover:scale-110"
                   type="button"
                   aria-label="Add to favorites"
                   onClick={(e) => e.preventDefault()}
@@ -273,7 +276,7 @@ function SpecialOffers() {
                 </button>
 
                 {/* Badges */}
-                <div className="absolute bottom-3 left-3 flex gap-2">
+                <div className="absolute bottom-3 right-3 flex gap-2">
                   <div className="bg-blue-600 text-white text-xs px-2 py-1 rounded-md flex items-center gap-1">
                     <ExclamationTriangleIcon className="w-3 h-3" />
                     {offer.remainingPeople}
@@ -286,27 +289,26 @@ function SpecialOffers() {
               </div>
 
               {/* Content Section */}
-              <div className="p-4 rtl">
+              <div className="p-4 text-right">
+                {" "}
                 <h3 className="text-lg font-bold text-gray-900 mb-2">
                   {offer.title}
                 </h3>
-
                 <div className="space-y-2 text-sm text-gray-600">
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 justify-end">
                     <ClockIcon className="w-4 h-4" />
                     <span>{offer.duration}</span>
                   </div>
 
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 justify-end">
                     <CalendarIcon className="w-4 h-4" />
                     <span>{offer.date}</span>
                   </div>
                 </div>
-
                 {/* Price Section */}
-                <div className="mt-4 pt-4 border-t border-gray-100">
+                <div className="mt-4 pt-4 border-t border-gray-100 text-right">
                   <p className="text-sm text-gray-500 mb-1">شروع قیمت از</p>
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 justify-end">
                     <span className="text-lg font-bold text-blue-600">
                       {offer.discountedPrice} تومان
                     </span>
