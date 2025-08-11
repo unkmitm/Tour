@@ -7,11 +7,12 @@ import {
   ChevronRightIcon,
 } from "@heroicons/react/24/outline";
 import { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const specialOffers = [
   {
-    id: 1,
-    title: "تور مثلث طلایی هند",
+    id: "turkey",
+    title: "تور ترکیه",
     duration: "۹ شب و ۱۰ روز",
     date: "۱۴۰۳/۰۸/۱۸",
     originalPrice: "85,000,000",
@@ -22,8 +23,8 @@ const specialOffers = [
       "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=300&q=80",
   },
   {
-    id: 2,
-    title: "تور مثلث طلایی هند",
+    id: "emirates",
+    title: "تور امارات",
     duration: "۹ شب و ۱۰ روز",
     date: "۱۴۰۳/۰۸/۱۸",
     originalPrice: "85,000,000",
@@ -34,8 +35,8 @@ const specialOffers = [
       "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=300&q=80",
   },
   {
-    id: 3,
-    title: "تور مثلث طلایی هند",
+    id: "armenia",
+    title: "تور ارمنستان",
     duration: "۹ شب و ۱۰ روز",
     date: "۱۴۰۳/۰۸/۱۸",
     originalPrice: "85,000,000",
@@ -46,8 +47,8 @@ const specialOffers = [
       "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=300&q=80",
   },
   {
-    id: 4,
-    title: "تور مثلث طلایی هند",
+    id: "georgia",
+    title: "تور گرجستان",
     duration: "۹ شب و ۱۰ روز",
     date: "۱۴۰۳/۰۸/۱۸",
     originalPrice: "85,000,000",
@@ -58,8 +59,8 @@ const specialOffers = [
       "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=300&q=80",
   },
   {
-    id: 5,
-    title: "تور مثلث طلایی هند",
+    id: "azerbaijan",
+    title: "تور آذربایجان",
     duration: "۹ شب و ۱۰ روز",
     date: "۱۴۰۳/۰۸/۱۸",
     originalPrice: "85,000,000",
@@ -70,8 +71,8 @@ const specialOffers = [
       "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=300&q=80",
   },
   {
-    id: 6,
-    title: "تور مثلث طلایی هند",
+    id: "qatar",
+    title: "تور قطر",
     duration: "۹ شب و ۱۰ روز",
     date: "۱۴۰۳/۰۸/۱۸",
     originalPrice: "85,000,000",
@@ -193,9 +194,12 @@ function SpecialOffers() {
             >
               <ChevronRightIcon className="w-5 h-5" />
             </button>
-            <span className="text-blue-600 font-medium cursor-pointer hover:text-blue-700 transition-colors">
+            <Link
+              to="/external"
+              className="text-blue-600 font-medium cursor-pointer hover:text-blue-700 transition-colors"
+            >
               مشاهده همه
-            </span>
+            </Link>
             <button
               onClick={scrollRight}
               disabled={!canScrollRight}
