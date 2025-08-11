@@ -4,7 +4,6 @@ import SearchBox from "./search/SearchBox";
 import RecentSearches from "./search/RecentSearches";
 import SpecialOffers from "./pages/SpecialOffers";
 import LifeSection from "./components/sections/LifeSection";
-import TourPage from "./pages/TourPage";
 import CountryPage from "./pages/CountryPage";
 import SearchResults from "./pages/SearchResults";
 import DomesticTours from "./components/tours/DomesticTours";
@@ -16,6 +15,7 @@ import MountainTours from "./components/tours/MountainTours";
 import NorthTours from "./components/tours/NorthTours";
 import CampingTours from "./components/tours/CampingTours";
 import Footer from "./Footer";
+import Login from "./components/common/Pages/Login";
 function Home() {
   return (
     <>
@@ -44,6 +44,7 @@ function App() {
         <Route path="/external" element={<InternationalToursPage />} />
         <Route path="/external/:country" element={<CountryPage />} />
         <Route path="/search" element={<SearchResults />} />
+         <Route path="/login" element={<Login />} />
       </Routes>
     </>
   );

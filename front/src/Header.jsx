@@ -117,14 +117,14 @@ function Header() {
               )}
             </div>
           ))}
-          <a href="#" className="flex justify-around gap-10">
+          <Link to="/login" className="flex justify-around gap-10">
             <span className="flex items-center gap-1 cursor-pointer hover:text-blue-700">
               <UserIcon className="w-5 h-5" /> ورود / ثبت نام
-              </span>
+            </span>
             <span className="flex items-center gap-1 px-3 py-2 bg-blue-50 rounded-lg text-blue-700">
               <PhoneIcon className="w-5 h-5" /> 09392187181
             </span>
-          </a>
+          </Link>
         </nav>
       </header>
       {/* Hero image placeholder */}
