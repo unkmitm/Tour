@@ -1,8 +1,33 @@
 import TourNavigation from "./TourNavigation";
 import TourCard from "./TourCard";
-import BulletList from "./common/BulletList";
 import SectionCard from "./common/SectionCard";
 import CampingData from "./data/CampingData";
+import InfoSection from "./data/infoSection";
+
+const campingMainEquipments = [
+  "چادر کمپینگ",
+  "کیسه خواب",
+  "زیرانداز",
+  "چراغ قوه",
+];
+const campingCookingEquipments = [
+  "گاز پیک‌نیکی",
+  "ظروف آشپزی",
+  "کبریت",
+  "منقل",
+];
+const safetyBeforeTrip = [
+  "آب کافی همراه داشته باشید",
+  "اطلاع دادن به نزدیکان",
+  "چک کردن تجهیزات",
+];
+const safetyDuringCamping = [
+  "آتش را کنترل کنید",
+  "محل کمپ را تمیز نگه دارید",
+  "از حیوانات وحشی دوری کنید",
+];
+const dailyActivities = ["پیاده‌روی", "شنا", "عکاسی"];
+const nightActivities = ["تماشای ستارگان", "آتش‌بازی", "قصه‌گویی"];
 
 function CampingTours() {
   return (
@@ -27,8 +52,7 @@ function CampingTours() {
                 bgColor: "bg-green-100",
                 title: "محیط‌های خفن",
                 titleColor: "text-green-700",
-                description:
-                  "کمپینگ در جنگل‌ها، کویر و کوهستان با مناظر طبیعی ",
+                description: "کمپینگ در جنگل‌ها، کویر و کوهستان با مناظر طبیعی",
               },
               {
                 icon: "🔥",
@@ -47,77 +71,38 @@ function CampingTours() {
             ]}
           />
 
-          <div className="mt-12 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-2xl p-8">
-            <h2 className="text-3xl font-bold mb-6 text-blue-800 text-center">
-              تجهیزات کمپینگ
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-xl font-semibold mb-4 text-blue-700">
-                  تجهیزات اصلی
-                </h3>
-                <BulletList
-                  items={["چادر کمپینگ", "کیسه خواب", "زیرانداز", "چراغ قوه"]}
-                />
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-4 text-blue-700">
-                  تجهیزات آشپزی
-                </h3>
-                <BulletList
-                  items={["چادر کمپینگ", "کیسه خواب", "زیرانداز", "چراغ قوه"]}
-                />
-              </div>
-            </div>
-          </div>
+          <InfoSection
+            title="تجهیزات کمپینگ"
+            fromColor="from-blue-50"
+            toColor="to-cyan-50"
+            textColor="text-blue-700"
+            sections={[
+              { heading: "تجهیزات اصلی", items: campingMainEquipments },
+              { heading: "تجهیزات آشپزی", items: campingCookingEquipments },
+            ]}
+          />
 
-          <div className="mt-12 bg-gradient-to-r from-orange-50 to-red-50 rounded-2xl p-8">
-            <h2 className="text-3xl font-bold mb-6 text-orange-800 text-center">
-              نکات ایمنی
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-xl font-semibold mb-4 text-orange-700">
-                  قبل از سفر
-                </h3>
-                <BulletList
-                  items={["چادر کمپینگ", "کیسه خواب", "زیرانداز", "چراغ قوه"]}
-                />
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-4 text-orange-700">
-                  حین کمپینگ
-                </h3>
-                <BulletList
-                  items={["چادر کمپینگ", "کیسه خواب", "زیرانداز", "چراغ قوه"]}
-                />
-              </div>
-            </div>
-          </div>
+          <InfoSection
+            title="نکات ایمنی"
+            fromColor="from-orange-50"
+            toColor="to-red-50"
+            textColor="text-orange-700"
+            sections={[
+              { heading: "قبل از سفر", items: safetyBeforeTrip },
+              { heading: "حین کمپینگ", items: safetyDuringCamping },
+            ]}
+          />
 
-          <div className="mt-12 bg-gradient-to-r from-yellow-50 to-amber-50 rounded-2xl p-8">
-            <h2 className="text-3xl font-bold mb-6 text-yellow-800 text-center">
-              فعالیت‌های تفریحی
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-xl font-semibold mb-4 text-yellow-700">
-                  فعالیت‌های روزانه
-                </h3>
-                <BulletList
-                  items={["چادر کمپینگ", "کیسه خواب", "زیرانداز", "چراغ قوه"]}
-                />
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-4 text-yellow-700">
-                  فعالیت‌های شبانه
-                </h3>
-                <BulletList
-                  items={["چادر کمپینگ", "کیسه خواب", "زیرانداز", "چراغ قوه"]}
-                />
-              </div>
-            </div>
-          </div>
+          <InfoSection
+            title="فعالیت‌های تفریحی"
+            fromColor="from-yellow-50"
+            toColor="to-amber-50"
+            textColor="text-yellow-700"
+            sections={[
+              { heading: "فعالیت‌های روزانه", items: dailyActivities },
+              { heading: "فعالیت‌های شبانه", items: nightActivities },
+            ]}
+          />
         </div>
       </div>
     </>
