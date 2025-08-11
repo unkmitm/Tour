@@ -2,47 +2,9 @@ import TourNavigation from "./TourNavigation";
 import TourCard from "./TourCard";
 import BulletList from "./common/BulletList";
 import SectionCard from "./common/SectionCard";
+import BeachData from "./data/BeachData";
 
-const beachTours = [
-  {
-    id: 1,
-    name: "تور ساحل چابهار",
-    duration: "یک روز",
-    price: "2,200,000 تومان",
-    highlights: ["ساحل شنی زیبا", "کوه‌های مریخی", "غروب آفتاب", "غذاهای محلی"],
-    includes: [
-      "اقامت در هتل ساحلی",
-      "صبحانه و شام",
-      "راهنما",
-      "حمل و نقل",
-      "بیمه",
-    ],
-  },
-  {
-    id: 2,
-    name: "تور ساحل کیش",
-    duration: "یک روز",
-    price: "1,900,000 تومان",
-    highlights: ["ساحل مرجانی", "غواصی", "خرید", "تفریحات آبی"],
-    includes: ["اقامت در هتل", "صبحانه", "تجهیزات غواصی", "راهنما", "بیمه"],
-  },
-  {
-    id: 3,
-    name: "تور ساحل هرمز",
-    duration: "یک روز",
-    price: "1,600,000 تومان",
-    highlights: ["ساحل رنگی", "کوه‌های رنگی", "فرهنگ محلی", "غذاهای سنتی"],
-    includes: [
-      "اقامت در اقامتگاه بوم‌گردی",
-      "صبحانه و شام",
-      "راهنما",
-      "حمل و نقل",
-      "بیمه",
-    ],
-  },
-];
-
-const tours = beachTours.map((tour) => {
+const tours = BeachData.map((tour) => {
   return <TourCard key={tour.id} tour={tour} />;
 });
 
