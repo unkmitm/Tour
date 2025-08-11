@@ -54,7 +54,7 @@ npm run dev
 
 ## 📸 Screenshots
 
-![FIRST SCREEN](./front/src/assests/images/image-1.png)
-![SECOND SCREEN](./front/src/assests/images/image1.png)
-![THIRD SCREEN](./front/src/assests/images/image2.png)
-![FORTH SCREEN](./front/src/assests/images/image3.png)
+![FIRST SCREEN](./front/src/assests/images/image.png)
+![SECOND SCREEN](./front/src/assests/images/image-1.png)
+![THIRD SCREEN](./front/src/assests/images/image-2.png)
+![FORTH SCREEN](./front/src/assests/images/image-3.png)
