@@ -7,6 +7,13 @@ import LifeSection from "./LifeSection";
 import TourPage from "./pages/TourPage";
 import CountryPage from "./pages/CountryPage";
 import SearchResults from "./pages/SearchResults";
+import DomesticTours from "./components/DomesticTours";
+import JungleTours from "./components/JungleTours";
+import SouthTours from "./components/SouthTours";
+import BeachTours from "./components/BeachTours";
+import MountainTours from "./components/MountainTours";
+import NorthTours from "./components/NorthTours";
+import CampingTours from "./components/CampingTours";
 
 function Home() {
   return (
@@ -19,30 +26,20 @@ function Home() {
   );
 }
 
-const internalTours = [
-  { path: "jungle", title: "تورهای جنگلی" },
-  { path: "south", title: "جنوب گردی" },
-  { path: "beach", title: "تورهای ساحلی" },
-  { path: "mountain", title: "کوه‌نوردی" },
-  { path: "north", title: "شمال" },
-  { path: "camping", title: "کمپینگ" },
-];
-
 function App() {
   return (
     <>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/internal" element={<TourPage title="تورهای داخلی" />} />
+        <Route path="/internal" element={<DomesticTours />} />
+        <Route path="/internal/jungle" element={<JungleTours />} />
+        <Route path="/internal/south" element={<SouthTours />} />
+        <Route path="/internal/beach" element={<BeachTours />} />
+        <Route path="/internal/mountain" element={<MountainTours />} />
+        <Route path="/internal/north" element={<NorthTours />} />
+        <Route path="/internal/camping" element={<CampingTours />} />
         <Route path="/external" element={<TourPage title="تورهای خارجی" />} />
-        {internalTours.map((tour) => (
-          <Route
-            key={tour.path}
-            path={`/internal/${tour.path}`}
-            element={<TourPage title={tour.title} />}
-          />
-        ))}
         <Route path="/external/:country" element={<CountryPage />} />
         <Route path="/search" element={<SearchResults />} />
       </Routes>
