@@ -14,6 +14,7 @@ import BeachTours from "./components/tours/BeachTours";
 import MountainTours from "./components/tours/MountainTours";
 import NorthTours from "./components/tours/NorthTours";
 import CampingTours from "./components/tours/CampingTours";
+import Footer from "./Footer";
 function Home() {
   return (
     <>
@@ -21,6 +22,7 @@ function Home() {
       <RecentSearches />
       <SpecialOffers />
       <LifeSection />
+      <Footer/>
     </>
   );
 }
