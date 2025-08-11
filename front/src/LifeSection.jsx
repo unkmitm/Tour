@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   HeartIcon,
   StarIcon,
@@ -7,6 +8,16 @@ import {
 
 function LifeSection() {
   const [isLiked, setIsLiked] = useState(false);
+  const otherTours = [
+    { title: "تور کیش از کرمان", to: "/internal/beach" },
+    { title: "تور استانبول", to: "/external/turkey" },
+    { title: "تور کیش", to: "/internal/beach" },
+    { title: "تور کیش از شیراز", to: "/internal/beach" },
+    { title: "تور کیش از تبریز", to: "/internal/beach" },
+    { title: "تور کیش از اصفهان", to: "/internal/beach" },
+    { title: "تور کیش از اهواز", to: "/internal/beach" },
+    { title: "تور کیش از مشهد", to: "/internal/beach" },
+  ];
 
   return (
     <div className="w-full bg-gradient-to-br from-blue-50 to-indigo-100 py-16 font-persian">
@@ -17,7 +28,7 @@ function LifeSection() {
             زندگی را تجربه کنید
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            با تریپ چت، لحظات خاطره‌انگیز را در کنار عزیزانتان رقم بزنید و
+            با تریپ جت، لحظات خاطره‌انگیز را در کنار عزیزانتان رقم بزنید و
             تجربه‌های جدیدی را کشف کنید
           </p>
         </div>
@@ -65,7 +76,7 @@ function LifeSection() {
                 سفر به معنای واقعی
               </h3>
               <p className="text-lg text-gray-600 leading-relaxed">
-                هر سفر داستان جدیدی است که باید روایت شود. با تریپ چت، شما نه
+                هر سفر داستان جدیدی است که باید روایت شود. با تریپ جت، شما نه
                 تنها مقصد را می‌بینید، بلکه فرهنگ، مردم و روح آن سرزمین را نیز
                 تجربه می‌کنید.
               </p>
@@ -120,6 +131,38 @@ function LifeSection() {
                 <div className="text-gray-600 text-sm">رضایت مشتری</div>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Other Tours - TripJet */}
+        <div className="mt-20 rtl">
+          <h3 className="text-4xl font-extrabold text-gray-900 text-center mb-4">
+            سایر تورهای تریپ جت
+          </h3>
+          <p className="text-gray-600 text-center max-w-4xl mx-auto mb-10 leading-relaxed">
+            برای افرادی که به تازگی پا به عرصه‌ی گردشگری گذاشته‌اند، سفر با تور
+            بهترین گزینه است. راهنمایان تور، به خاطر تجربه‌های زیاد، اطلاعات
+            دقیق از مقصد گردشگری دارند و شما را در شناخت بهتر مقصد همراهی
+            می‌کنند. در این بخش می‌توانید برخی از محبوب‌ترین تورهای تریپ جت را
+            ببینید.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {otherTours.map(({ title, to }, index) => (
+              <Link
+                to={{
+                  pathname: to, 
+                  search: "?ref=homepage", 
+                }}
+                key={index}
+                className="flex items-center justify-between bg-white border rounded-2xl p-5 shadow-sm hover:shadow-md transition-all"
+              >
+                <span className="text-lg font-semibold text-gray-800">
+                  {title}
+                </span>
+                <span className="text-gray-400">←</span>
+              </Link>
+            ))}
           </div>
         </div>
       </div>
