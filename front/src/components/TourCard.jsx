@@ -1,6 +1,9 @@
 function TourCard({ tour }) {
   return (
-    <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+    <div
+      className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+      dir="rtl"
+    >
       <div className="h-48 bg-gradient-to-br from-blue-400 to-purple-600 flex items-center justify-center relative overflow-hidden">
         <div className="absolute inset-0 bg-black bg-opacity-20"></div>
         <div className="relative z-10 text-center text-white">
@@ -29,9 +32,9 @@ function TourCard({ tour }) {
             {tour.highlights.map((highlight, index) => (
               <li
                 key={index}
-                className="text-sm text-gray-600 flex items-center"
+                className="text-sm text-gray-600 flex items-center flex-row-reverse"
               >
-                <span className="w-2 h-2 bg-blue-500 rounded-full ml-2"></span>
+                <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
                 {highlight}
               </li>
             ))}
@@ -44,9 +47,9 @@ function TourCard({ tour }) {
             {tour.includes.map((item, index) => (
               <li
                 key={index}
-                className="text-sm text-gray-600 flex items-center"
+                className="text-sm text-gray-600 flex items-center flex-row-reverse"
               >
-                <span className="w-2 h-2 bg-green-500 rounded-full ml-2"></span>
+                <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
                 {item}
               </li>
             ))}
