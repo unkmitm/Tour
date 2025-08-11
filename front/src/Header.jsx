@@ -117,15 +117,14 @@ function Header() {
               )}
             </div>
           ))}
-          <span className="text-gray-400">|</span>
-          <span className="flex items-center gap-1 cursor-pointer hover:text-blue-700">
-            <UserIcon className="w-5 h-5" /> ورود / ثبت نام
-            <ArrowLeftIcon className="w-4 h-4" />
-          </span>
-          <span className="flex items-center gap-1 px-3 py-2 bg-blue-50 rounded-lg text-blue-700">
-            <PhoneIcon className="w-5 h-5" /> 02170709797
-          </span>
-          <MagnifyingGlassIcon className="w-5 h-5 text-gray-500 cursor-pointer" />
+          <a href="#" className="flex justify-around gap-10">
+            <span className="flex items-center gap-1 cursor-pointer hover:text-blue-700">
+              <UserIcon className="w-5 h-5" /> ورود / ثبت نام
+              </span>
+            <span className="flex items-center gap-1 px-3 py-2 bg-blue-50 rounded-lg text-blue-700">
+              <PhoneIcon className="w-5 h-5" /> 09392187181
+            </span>
+          </a>
         </nav>
       </header>
       {/* Hero image placeholder */}
