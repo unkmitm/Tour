@@ -16,6 +16,7 @@ import NorthTours from "./components/tours/NorthTours";
 import CampingTours from "./components/tours/CampingTours";
 import Footer from "./Footer";
 import Login from "./components/common/Pages/Login";
+import SignUp from "./components/common/Pages/SignUp";
 function Home() {
   return (
     <>
@@ -23,7 +24,7 @@ function Home() {
       <RecentSearches />
       <SpecialOffers />
       <LifeSection />
-      <Footer/>
+      <Footer />
     </>
   );
 }
@@ -44,7 +45,8 @@ function App() {
         <Route path="/external" element={<InternationalToursPage />} />
         <Route path="/external/:country" element={<CountryPage />} />
         <Route path="/search" element={<SearchResults />} />
-         <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signUp" element={<SignUp />} />
       </Routes>
     </>
   );
