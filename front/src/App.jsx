@@ -8,6 +8,7 @@ import TourPage from "./pages/TourPage";
 import CountryPage from "./pages/CountryPage";
 import SearchResults from "./pages/SearchResults";
 import DomesticTours from "./components/tours/DomesticTours";
+import InternationalToursPage from "./components/tours/InternationalTours";
 import JungleTours from "./components/tours/JungleTours";
 import SouthTours from "./components/tours/SouthTours";
 import BeachTours from "./components/tours/BeachTours";
@@ -40,7 +41,7 @@ function App() {
         <Route path="/internal/mountain" element={<MountainTours />} />
         <Route path="/internal/north" element={<NorthTours />} />
         <Route path="/internal/camping" element={<CampingTours />} />
-        <Route path="/external" element={<TourPage title="تورهای خارجی" />} />
+        <Route path="/external" element={<InternationalToursPage />} />
         <Route path="/external/:country" element={<CountryPage />} />
         <Route path="/search" element={<SearchResults />} />
       </Routes>
