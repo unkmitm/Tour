@@ -15,7 +15,7 @@ import NorthTours from "./components/tours/NorthTours";
 import CampingTours from "./components/tours/CampingTours";
 import Footer from "./Footer";
 import SignUp from "./components/common/pages/SignUp";
-import Login from "./components/common/pages/ages/Login";
+import Login from "./components/common/pages/Login";
 
 export {
   Header,
