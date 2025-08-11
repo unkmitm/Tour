@@ -14,7 +14,6 @@ import NorthTours from "./components/tours/NorthTours";
 import CampingTours from "./components/tours/CampingTours";
 import Footer from "./Footer";
 import SearchBox from "./search/searchbox.jsx";
-
 import SignUp from "./components/common/Pages/SignUp.jsx";
 import RecentSearches from "./search/recentsearches.jsx";
 import Login from "./components/common/pages/Login";
