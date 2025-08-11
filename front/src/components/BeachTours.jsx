@@ -1,6 +1,7 @@
 import TourNavigation from "./TourNavigation";
 import TourCard from "./TourCard";
-import BulletList from "./Bulletlist";
+import BulletList from "./common/BulletList";
+import SectionCard from "./common/SectionCard";
 
 const beachTours = [
   {
@@ -51,103 +52,94 @@ function BeachTours() {
       <TourNavigation />
       <div className="rtl p-8 text-right">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h1 className="text-5xl font-bold mb-6 text-blue-800">
-              تورهای ساحلی ایران
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              لذت بردن از زیبایی‌های ساحل و دریا. از سواحل شنی جنوب تا سواحل
-              مرجانی خلیج فارس، لحظات آرامش‌بخشی را تجربه کنید.
-            </p>
-          </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {tours}
           </div>
 
-          <div className="mt-16 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-2xl p-8">
-            <p className="text-3xl font-bold mb-6 text-blue-800 text-center">
-              ویژگی‌های سواحل ایران
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">🏖️</span>
-                </div>
-                <h3 className="text-xl font-semibold mb-2 text-blue-700">
-                  سواحل متنوع
-                </h3>
-                <p className="text-gray-600">
-                  از سواحل شنی تا مرجانی با مناظر متفاوت
-                </p>
-              </div>
+          <SectionCard
+            title="ویژگی‌های سواحل ایران"
+            gradient="from-blue-50 to-cyan-50"
+            textColor="text-blue-800"
+            cols={3}
+            items={[
+              {
+                icon: "🏖️",
+                bgColor: "bg-blue-100",
+                title: "سواحل متنوع",
+                titleColor: "text-blue-700",
+                description: "از سواحل شنی تا مرجانی با مناظر متفاوت",
+              },
+              {
+                icon: "🌊",
+                bgColor: "bg-cyan-100",
+                title: "آب‌های شفاف",
+                titleColor: "text-cyan-700",
+                description: "آب‌های زلال و تمیز برای شنا و غواصی",
+              },
+              {
+                icon: "🌅",
+                bgColor: "bg-indigo-100",
+                title: "غروب زیبا",
+                titleColor: "text-indigo-700",
+                description: "تماشای غروب آفتاب در کنار دریا",
+              },
+            ]}
+          />
 
-              <div className="text-center">
-                <div className="w-16 h-16 bg-cyan-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">🌊</span>
-                </div>
-                <h3 className="text-xl font-semibold mb-2 text-cyan-700">
-                  آب‌های شفاف
-                </h3>
-                <p className="text-gray-600">
-                  آب‌های زلال و تمیز برای شنا و غواصی
-                </p>
-              </div>
-
-              <div className="text-center">
-                <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">🌅</span>
-                </div>
-                <h3 className="text-xl font-semibold mb-2 text-indigo-700">
-                  غروب زیبا
-                </h3>
-                <p className="text-gray-600">تماشای غروب آفتاب در کنار دریا</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-12 bg-gradient-to-r from-teal-50 to-green-50 rounded-2xl p-8">
-            <p className="text-3xl font-bold mb-6 text-teal-800 text-center">
+          <div className="mt-12 bg-gradient-to-br from-teal-100 via-teal-50 to-green-100 rounded-3xl p-10 shadow-lg">
+            <p className="text-4xl font-extrabold mb-10 text-teal-900 text-center drop-shadow-sm">
               فعالیت‌های ساحلی
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-xl font-semibold mb-4 text-teal-700">
-                  ورزش‌های آبی
+
+            <div className="flex flex-col items-center gap-12 md:flex-row md:items-start md:justify-center">
+              <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-md w-full max-w-sm text-center">
+                <h3 className="text-2xl font-bold mb-6 text-teal-700">
+                  🌊 ورزش‌های آبی
                 </h3>
                 <BulletList
-                  items={["شنا در دریا", "غواصی", "قایق‌سواری", "ماهیگیری"]}
+                  items={[
+                    "شنا در دریا 🏊‍♂️",
+                    "غواصی 🤿",
+                    "قایق‌سواری 🚤",
+                    "ماهیگیری 🎣",
+                  ]}
                 />
               </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-4 text-teal-700">
-                  فعالیت‌های تفریحی
+
+              <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-md w-full max-w-sm text-center">
+                <h3 className="text-2xl font-bold mb-6 text-teal-700">
+                  🏖️ فعالیت‌های تفریحی
                 </h3>
                 <BulletList
-                  items={["شنا در دریا", "غواصی", "قایق‌سواری", "ماهیگیری"]} // Add Your Own list
+                  items={[
+                    "آفتاب‌گرفتن ☀️",
+                    "پیاده‌روی ساحلی 🚶‍♂️",
+                    "عکاسی 📸",
+                    "پیک‌نیک 🧺",
+                  ]}
                 />
               </div>
             </div>
           </div>
 
-          <div className="mt-12 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-2xl p-8">
-            <p className="text-3xl font-bold mb-6 text-yellow-800 text-center">
+          <div className="mt-12 bg-gradient-to-br from-yellow-100 via-yellow-50 to-orange-100 rounded-3xl p-10 shadow-lg">
+            <p className="text-4xl font-extrabold mb-10 text-yellow-900 text-center drop-shadow-sm">
               بهترین زمان سفر
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 ">
-              <div>
-                <h3 className="text-xl font-semibold mb-4 text-yellow-700">
-                  فصول مناسب
+
+            <div className="flex flex-col items-center gap-12 md:flex-row md:items-start md:justify-center">
+              <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-md w-full max-w-sm text-center">
+                <h3 className="text-2xl font-bold mb-6 text-yellow-700">
+                  🌤️ فصول مناسب
                 </h3>
-                <BulletList items={["تابستون", "بهار"]} />
+                <BulletList items={["تابستون ☀️", "بهار 🌸"]} />
               </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-4 text-yellow-700">
-                  نکات مهم
-                </h3> 
-                <BulletList
-                  items={["کرم ضد آفتاب" , "آوردن غذا"]}
-                />
+
+              <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-md w-full max-w-sm text-center">
+                <h3 className="text-2xl font-bold mb-6 text-yellow-700">
+                  ⚠️ نکات مهم
+                </h3>
+                <BulletList items={["کرم ضد آفتاب 🧴", "آوردن غذا 🍱"]} />
               </div>
             </div>
           </div>
