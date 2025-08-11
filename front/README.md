@@ -1,12 +1,60 @@
-# React + Vite
+# 🧳 TripJet – Travel & Tour Booking Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**TripJet** is a modern web application for booking, and exploring special travel offers for both domestic and international destinations.  
+It features a clean, responsive, and user-friendly interface designed to provide a smooth travel planning experience.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🎯 **Special Offers Section** – Display discounted tours with price details.
+- 📅 **Tour Details** – Duration, departure date, price, and discount percentage.
+- 🖼 **Attractive Visuals** – High-quality images for each destination From Unsplash.
+- 📊 **Modern UI** – Minimal and responsive design for all devices (Progress).
 
-## Expanding the ESLint configuration
+## 🛠 Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Frontend:** React.js + Vite
+- **Styling:** CSS Modules / TailwindCSS 
+- **Routing:** React Router
+
+## 📂 Project Structure
+
+```
+src/
+│
+├── assets/            # Static images and media
+├── components/        # Reusable UI components (Header, Footer, etc.)
+├── pages/             # Main pages (SpecialOffers, Home, etc.)
+│   ├── SpecialOffers/  # Special offers listing page
+│   └── ...
+├── data/              # Static data files (specialOffers.js)
+├── App.jsx            # Main app component
+└── main.jsx           # Application entry point
+```
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/tripjet.git
+cd front
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Run the development server
+
+```bash
+npm run dev
+```
+
+## 📸 Screenshots
+
+![FIRST SCREEN](./src/assests/images/image.png)
+![SECOND SCREEN](./src/assests/images/image1.png)
+![THIRD SCREEN](./src/assests/images/image2.png)
+![FORTH SCREEN](./src/assests/images/image3.png)
