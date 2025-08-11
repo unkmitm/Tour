@@ -1,54 +1,20 @@
 import TourNavigation from "./TourNavigation";
 import TourCard from "./TourCard";
+import SectionCard from "./common/SectionCard";
+import InfoSection from "./data/infoSection";
+import JungleData from "./data/JungleData";
 
-const jungleTours = [
-  {
-    id: 1,
-    name: "تور جنگل‌های شمال",
-    duration: "3 روز و 2 شب",
-    price: "2,500,000 تومان",
-    highlights: [
-      "پیاده‌روی در جنگل",
-      "شب‌مانی در کلبه",
-      "تماشای حیات وحش",
-      "عکاسی طبیعت",
-    ],
-    includes: [
-      "اقامت در کلبه جنگلی",
-      "صبحانه و شام",
-      "راهنمای محلی",
-      "حمل و نقل",
-      "تجهیزات پیاده‌روی",
-    ],
-  },
-  {
-    id: 2,
-    name: "تور جنگل‌های زاگرس",
-    duration: "4 روز و 3 شب",
-    price: "3,200,000 تومان",
-    highlights: ["کوه‌نوردی", "کمپینگ", "عکاسی طبیعت", "تماشای غروب"],
-    includes: [
-      "اقامت در کمپ",
-      "تمام وعده‌ها",
-      "تجهیزات کمپینگ",
-      "راهنمای حرفه‌ای",
-      "بیمه سفر",
-    ],
-  },
-  {
-    id: 3,
-    name: "تور جنگل‌های ارسباران",
-    duration: "5 روز و 4 شب",
-    price: "3,800,000 تومان",
-    highlights: ["جنگل‌های باستانی", "آبشارها", "منظره کوهستان", "فرهنگ محلی"],
-    includes: [
-      "اقامت در اقامتگاه بوم‌گردی",
-      "تمام وعده‌ها",
-      "راهنما",
-      "حمل و نقل",
-      "بیمه",
-    ],
-  },
+const jungleBenefits = [
+  "هوای پاک و تازه",
+  "آرامش و دوری از شلوغی شهر",
+  "تماشای حیات وحش",
+  "فعالیت‌های ورزشی در طبیعت",
+];
+
+const jungleBestSeasons = [
+  "بهار: شکوفه‌ها و هوای معتدل",
+  "تابستان: هوای خنک و سرسبزی",
+  "پاییز: رنگ‌های زیبا و هوای خنک",
 ];
 
 function JungleTours() {
@@ -69,60 +35,51 @@ function JungleTours() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {jungleTours.map((tour) => (
+            {JungleData.map((tour) => (
               <TourCard key={tour.id} tour={tour} />
             ))}
           </div>
 
-          <div className="mt-16 bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-8">
-            <h2 className="text-3xl font-bold mb-6 text-green-800 text-center">
-              چرا تورهای جنگلی؟
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-xl font-semibold mb-4 text-green-700">
-                  مزایای سفر به جنگل
-                </h3>
-                <ul className="space-y-2 text-gray-700">
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-green-500 rounded-full ml-2"></span>
-                    هوای پاک و تازه
-                  </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-green-500 rounded-full ml-2"></span>
-                    آرامش و دوری از شلوغی شهر
-                  </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-green-500 rounded-full ml-2"></span>
-                    تماشای حیات وحش
-                  </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-green-500 rounded-full ml-2"></span>
-                    فعالیت‌های ورزشی در طبیعت
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-4 text-green-700">
-                  بهترین زمان سفر
-                </h3>
-                <ul className="space-y-2 text-gray-700">
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-green-500 rounded-full ml-2"></span>
-                    بهار: شکوفه‌ها و هوای معتدل
-                  </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-green-500 rounded-full ml-2"></span>
-                    تابستان: هوای خنک و سرسبزی
-                  </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-green-500 rounded-full ml-2"></span>
-                    پاییز: رنگ‌های زیبا و هوای خنک
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
+          <SectionCard
+            title="چرا تورهای جنگلی؟"
+            gradient="from-green-50 to-emerald-50"
+            textColor="text-green-800"
+            cols={3}
+            items={[
+              {
+                icon: "🌿",
+                bgColor: "bg-green-100",
+                title: "هوای پاک",
+                titleColor: "text-green-700",
+                description: "نفس کشیدن در هوای تمیز و تازه جنگل",
+              },
+              {
+                icon: "🦌",
+                bgColor: "bg-emerald-100",
+                title: "حیات وحش",
+                titleColor: "text-emerald-700",
+                description: "تماشای گونه‌های جانوری در زیستگاه طبیعی",
+              },
+              {
+                icon: "🧘‍♂️",
+                bgColor: "bg-teal-100",
+                title: "آرامش",
+                titleColor: "text-teal-700",
+                description: "دوری از شلوغی شهر و آرامش عمیق طبیعت",
+              },
+            ]}
+          />
+
+          <InfoSection
+            title="اطلاعات سفر"
+            fromColor="from-green-50"
+            toColor="to-emerald-50"
+            textColor="text-green-700"
+            sections={[
+              { heading: "مزایای سفر به جنگل", items: jungleBenefits },
+              { heading: "بهترین زمان سفر", items: jungleBestSeasons },
+            ]}
+          />
         </div>
       </div>
     </>

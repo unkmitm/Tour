@@ -1,12 +1,8 @@
 import TourNavigation from "./TourNavigation";
 import TourCard from "./TourCard";
-import BulletList from "./common/BulletList";
 import SectionCard from "./common/SectionCard";
 import BeachData from "./data/BeachData";
-
-const tours = BeachData.map((tour) => {
-  return <TourCard key={tour.id} tour={tour} />;
-});
+import InfoSection from "./data/infoSection";
 
 function BeachTours() {
   return (
@@ -15,7 +11,9 @@ function BeachTours() {
       <div className="rtl p-8 text-right">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {tours}
+            {BeachData.map((tour) => (
+              <TourCard key={tour.id} tour={tour} />
+            ))}
           </div>
 
           <SectionCard
@@ -48,63 +46,46 @@ function BeachTours() {
             ]}
           />
 
-          <div className="mt-12 bg-gradient-to-br from-teal-100 via-teal-50 to-green-100 rounded-3xl p-10 shadow-lg">
-            <p className="text-4xl font-extrabold mb-10 text-teal-900 text-center drop-shadow-sm">
-              فعالیت‌های ساحلی
-            </p>
+          <InfoSection
+            title="فعالیت‌های ساحلی"
+            fromColor="from-teal-100"
+            toColor="to-green-100"
+            textColor="text-teal-700"
+            sections={[
+              {
+                heading: "🌊 ورزش‌های آبی",
+                items: [
+                  "شنا در دریا 🏊‍♂️",
+                  "غواصی 🤿",
+                  "قایق‌سواری 🚤",
+                  "ماهیگیری 🎣",
+                ],
+              },
+              {
+                heading: "🏖️ فعالیت‌های تفریحی",
+                items: [
+                  "آفتاب‌گرفتن ☀️",
+                  "پیاده‌روی ساحلی 🚶‍♂️",
+                  "عکاسی 📸",
+                  "پیک‌نیک 🧺",
+                ],
+              },
+            ]}
+          />
 
-            <div className="flex flex-col items-center gap-12 md:flex-row md:items-start md:justify-center">
-              <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-md w-full max-w-sm text-center">
-                <h3 className="text-2xl font-bold mb-6 text-teal-700">
-                  🌊 ورزش‌های آبی
-                </h3>
-                <BulletList
-                  items={[
-                    "شنا در دریا 🏊‍♂️",
-                    "غواصی 🤿",
-                    "قایق‌سواری 🚤",
-                    "ماهیگیری 🎣",
-                  ]}
-                />
-              </div>
-
-              <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-md w-full max-w-sm text-center">
-                <h3 className="text-2xl font-bold mb-6 text-teal-700">
-                  🏖️ فعالیت‌های تفریحی
-                </h3>
-                <BulletList
-                  items={[
-                    "آفتاب‌گرفتن ☀️",
-                    "پیاده‌روی ساحلی 🚶‍♂️",
-                    "عکاسی 📸",
-                    "پیک‌نیک 🧺",
-                  ]}
-                />
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-12 bg-gradient-to-br from-yellow-100 via-yellow-50 to-orange-100 rounded-3xl p-10 shadow-lg">
-            <p className="text-4xl font-extrabold mb-10 text-yellow-900 text-center drop-shadow-sm">
-              بهترین زمان سفر
-            </p>
-
-            <div className="flex flex-col items-center gap-12 md:flex-row md:items-start md:justify-center">
-              <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-md w-full max-w-sm text-center">
-                <h3 className="text-2xl font-bold mb-6 text-yellow-700">
-                  🌤️ فصول مناسب
-                </h3>
-                <BulletList items={["تابستون ☀️", "بهار 🌸"]} />
-              </div>
-
-              <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-md w-full max-w-sm text-center">
-                <h3 className="text-2xl font-bold mb-6 text-yellow-700">
-                  ⚠️ نکات مهم
-                </h3>
-                <BulletList items={["کرم ضد آفتاب 🧴", "آوردن غذا 🍱"]} />
-              </div>
-            </div>
-          </div>
+          <InfoSection
+            title="بهترین زمان سفر"
+            fromColor="from-yellow-100"
+            toColor="to-orange-100"
+            textColor="text-yellow-700"
+            sections={[
+              { heading: "🌤️ فصول مناسب", items: ["تابستون ☀️", "بهار 🌸"] },
+              {
+                heading: "⚠️ نکات مهم",
+                items: ["کرم ضد آفتاب 🧴", "آوردن غذا 🍱"],
+              },
+            ]}
+          />
         </div>
       </div>
     </>
