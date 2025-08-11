@@ -18,8 +18,8 @@ function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h3 className="text-xl font-semibold mb-4">دسترسی سریع</h3>
+          <div className="text-center">
+            <h3 className="text-xl font-semibold mb-4 ">دسترسی سریع</h3>
             <ul className="space-y-2">
               <li>
                 <Link

@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Header from "./Header";
-import SearchBox from "./Search/SearchBox";
-import RecentSearches from "./Search/RecentSearches";
+import SearchBox from "./search/SearchBox";
+import RecentSearches from "./search/RecentSearches";
 import SpecialOffers from "./pages/SpecialOffers";
 import LifeSection from "./components/sections/LifeSection";
 import TourPage from "./pages/TourPage";
