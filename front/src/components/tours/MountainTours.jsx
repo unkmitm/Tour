@@ -1,8 +1,8 @@
-import TourNavigation from "./TourNavigation";
-import TourCard from "./TourCard";
-import SectionCard from "./common/SectionCard";
-import InfoSection from "./data/infoSection";
-import MountainData from "./data/MountainData";
+import TourCard from "../TourCard";
+import SectionCard from "../common/SectionCard";
+import InfoSection from "../data/infoSection";
+import MountainData from "../data/MountainData";
+import TourNavigation from "../navigations/TourNavigation";
 
 const personalEquipments = [
   "کفش کوه‌نوردی",

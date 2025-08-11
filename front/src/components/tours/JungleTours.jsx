@@ -1,8 +1,8 @@
-import TourNavigation from "./TourNavigation";
-import TourCard from "./TourCard";
-import SectionCard from "./common/SectionCard";
-import InfoSection from "./data/infoSection";
-import JungleData from "./data/JungleData";
+import TourNavigation from "../navigations/TourNavigation";
+import TourCard from "../TourCard";
+import SectionCard from "../common/SectionCard";
+import InfoSection from "../data/infoSection";
+import JungleData from "../data/JungleData";
 
 const jungleBenefits = [
   "هوای پاک و تازه",

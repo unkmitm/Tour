@@ -1,9 +1,8 @@
-import TourNavigation from "./TourNavigation";
-import TourCard from "./TourCard";
-import SectionCard from "./common/SectionCard";
-import InfoSection from "./data/infoSection";
-import SouthData from "./data/SouthData";
-
+import TourNavigation from "../navigations/TourNavigation";
+import TourCard from "../TourCard";
+import SectionCard from "../common/SectionCard";
+import InfoSection from "../data/infoSection";
+import SouthData from "../data/SouthData";
 
 function SouthTours() {
   return (

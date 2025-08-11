@@ -1,20 +1,19 @@
 import { Routes, Route } from "react-router-dom";
 import Header from "./Header";
-import SearchBox from "./SearchBox";
-import RecentSearches from "./RecentSearches";
-import SpecialOffers from "./SpecialOffers";
-import LifeSection from "./LifeSection";
+import SearchBox from "./Search/SearchBox";
+import RecentSearches from "./Search/RecentSearches";
+import SpecialOffers from "./pages/SpecialOffers";
+import LifeSection from "./components/sections/LifeSection";
 import TourPage from "./pages/TourPage";
 import CountryPage from "./pages/CountryPage";
 import SearchResults from "./pages/SearchResults";
-import DomesticTours from "./components/DomesticTours";
-import JungleTours from "./components/JungleTours";
-import SouthTours from "./components/SouthTours";
-import BeachTours from "./components/BeachTours";
-import MountainTours from "./components/MountainTours";
-import NorthTours from "./components/NorthTours";
-import CampingTours from "./components/CampingTours";
-
+import DomesticTours from "./components/tours/DomesticTours";
+import JungleTours from "./components/tours/JungleTours";
+import SouthTours from "./components/tours/SouthTours";
+import BeachTours from "./components/tours/BeachTours";
+import MountainTours from "./components/tours/MountainTours";
+import NorthTours from "./components/tours/NorthTours";
+import CampingTours from "./components/tours/CampingTours";
 function Home() {
   return (
     <>

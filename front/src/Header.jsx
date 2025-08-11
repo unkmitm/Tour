@@ -6,7 +6,7 @@ import {
   UserIcon,
   ArrowLeftIcon,
 } from "@heroicons/react/24/outline";
-import Dropdown from "./Dropdown";
+import Dropdown from "./pages/Dropdown";
 import { Link, useNavigate } from "react-router-dom";
 
 const navItems = [

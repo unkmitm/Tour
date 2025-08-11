@@ -1,8 +1,8 @@
-import TourNavigation from "./TourNavigation";
-import TourCard from "./TourCard";
-import SectionCard from "./common/SectionCard";
-import BeachData from "./data/BeachData";
-import InfoSection from "./data/infoSection";
+import TourNavigation from "../navigations/TourNavigation";
+import TourCard from "../TourCard";
+import SectionCard from "../common/SectionCard";
+import BeachData from "../data/BeachData";
+import InfoSection from "../data/infoSection";
 
 function BeachTours() {
   return (

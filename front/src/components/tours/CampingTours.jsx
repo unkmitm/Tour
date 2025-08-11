@@ -1,8 +1,8 @@
-import TourNavigation from "./TourNavigation";
-import TourCard from "./TourCard";
-import SectionCard from "./common/SectionCard";
-import CampingData from "./data/CampingData";
-import InfoSection from "./data/infoSection";
+import TourNavigation from "../navigations/TourNavigation";
+import TourCard from "../TourCard";
+import SectionCard from "../common/SectionCard";
+import CampingData from "../data/CampingData";
+import InfoSection from "../data/infoSection";
 
 const campingMainEquipments = [
   "چادر کمپینگ",
