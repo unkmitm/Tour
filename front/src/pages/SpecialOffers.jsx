@@ -23,7 +23,7 @@ const specialOffers = [
       "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=300&q=80",
   },
   {
-    id: "emirates",
+    id: "uae",
     title: "تور امارات",
     duration: "۹ شب و ۱۰ روز",
     date: "۱۴۰۳/۰۸/۱۸",
@@ -240,9 +240,10 @@ function SpecialOffers() {
           onTouchMove={handleTouchMove}
         >
           {specialOffers.map((offer, index) => (
-            <div
+            <Link
               key={offer.id}
-              className="min-w-[300px] bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 transform"
+              to={`/external/${offer.id}`}
+              className="min-w-[300px] bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 transform block"
               style={{
                 animationDelay: `${index * 100}ms`,
                 animation: "fadeInUp 0.6s ease-out forwards",
@@ -266,6 +267,7 @@ function SpecialOffers() {
                   className="absolute top-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-gray-50 transition-colors hover:scale-110"
                   type="button"
                   aria-label="Add to favorites"
+                  onClick={(e) => e.preventDefault()} 
                 >
                   <HeartIcon className="w-5 h-5 text-gray-600" />
                 </button>
@@ -314,7 +316,7 @@ function SpecialOffers() {
                   </div>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
