@@ -330,7 +330,10 @@ function CountryPage() {
 
   if (!countryData) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center font-persian">
+      <div
+        className="min-h-screen bg-gray-50 flex items-center justify-center font-persian"
+        dir="rtl"
+      >
         <div className="text-center">
           <h1 className="text-2xl font-bold text-gray-900 mb-4">
             کشور یافت نشد
@@ -347,14 +350,14 @@ function CountryPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 font-persian">
+    <div className="min-h-screen bg-gray-50 font-persian" dir="rtl">
       {/* Header */}
       <div className="bg-white shadow-sm border-b">
         <div className="max-w-6xl mx-auto px-6 py-4">
-          <div className="flex items-center gap-4 rtl">
+          <div className="flex items-center gap-4 flex-row-reverse">
             <Link
               to="/external"
-              className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors"
+              className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors flex-row-reverse"
             >
               <ArrowLeftIcon className="w-5 h-5" />
               <span>بازگشت به تورهای خارجی</span>
@@ -364,10 +367,10 @@ function CountryPage() {
       </div>
 
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-16">
-        <div className="max-w-6xl mx-auto px-6 text-center">
+      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-16 text-center">
+        <div className="max-w-6xl mx-auto px-6">
           <div className="text-6xl mb-4">{countryData.flag}</div>
-          <h1 className="text-4xl font-bold mb-4">{countryData.name}</h1>
+          <h1 className="text-4xl font-bold mb-4 ">{countryData.name}</h1>
           <p className="text-xl text-blue-100 max-w-2xl mx-auto">
             {countryData.description}
           </p>
@@ -377,11 +380,11 @@ function CountryPage() {
       {/* Tours Section */}
       <div className="py-12">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="flex items-center justify-between mb-8 rtl">
+          <div className="flex items-center justify-between mb-8 flex-row-reverse">
             <h2 className="text-3xl font-bold text-gray-900">
               تورهای {countryData.name}
             </h2>
-            <div className="flex items-center gap-2 text-gray-600">
+            <div className="flex items-center gap-2 text-gray-600 flex-row-reverse">
               <MapPinIcon className="w-5 h-5" />
               <span>{countryData.tours.length} تور موجود</span>
             </div>
@@ -391,7 +394,7 @@ function CountryPage() {
             {countryData.tours.map((tour) => (
               <div
                 key={tour.id}
-                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 text-right rtl"
               >
                 {/* Image */}
                 <div className="relative h-48">
@@ -401,23 +404,23 @@ function CountryPage() {
                     className="w-full h-full object-cover"
                     loading="lazy"
                   />
-                  <button className="absolute top-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-gray-50 transition-colors">
+                  <button className="absolute top-3 left-3 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-gray-50 transition-colors">
                     <HeartIcon className="w-5 h-5 text-gray-600" />
                   </button>
-                  <div className="absolute top-3 left-3 bg-blue-600 text-white text-xs px-2 py-1 rounded-md flex items-center gap-1">
+                  <div className="absolute top-3 right-3 bg-blue-600 text-white text-xs px-2 py-1 rounded-md flex items-center gap-1">
                     <StarIcon className="w-3 h-3" />
                     {tour.rating}
                   </div>
                 </div>
 
                 {/* Content */}
-                <div className="p-6 rtl">
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">
+                <div className="p-6 text-right">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 ">
                     {tour.title}
                   </h3>
 
                   {/* Tour Details */}
-                  <div className="space-y-3 mb-4">
+                  <div className="space-y-3 mb-4 text-right" dir="rtl">
                     <div className="flex items-center gap-2 text-gray-600">
                       <ClockIcon className="w-4 h-4" />
                       <span>{tour.duration}</span>
@@ -433,11 +436,11 @@ function CountryPage() {
                   </div>
 
                   {/* Highlights */}
-                  <div className="mb-4">
+                  <div className="mb-4 text-right" dir="rtl">
                     <h4 className="font-medium text-gray-900 mb-2">
                       نکات برجسته:
                     </h4>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-2 justify-start">
                       {tour.highlights.map((highlight, index) => (
                         <span
                           key={index}
@@ -450,8 +453,8 @@ function CountryPage() {
                   </div>
 
                   {/* Price and Action */}
-                  <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                    <div className="flex items-center gap-2">
+                  <div className="flex flex-row-reverse items-center justify-between pt-4 border-t border-gray-100">
+                    <div className="flex items-center gap-2 flex-row-reverse">
                       <CurrencyDollarIcon className="w-5 h-5 text-green-600" />
                       <span className="text-2xl font-bold text-green-600">
                         {tour.price}
@@ -472,11 +475,11 @@ function CountryPage() {
       {/* Additional Info Section */}
       <div className="bg-white py-12 border-t border-gray-100">
         <div className="max-w-6xl mx-auto px-6">
-          <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+          <h3 className="text-2xl font-bold text-gray-900 mb-6 text-right">
             اطلاعات تکمیلی {countryData.name}
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-right">
+            <div>
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <MapPinIcon className="w-8 h-8 text-blue-600" />
               </div>
@@ -486,7 +489,7 @@ function CountryPage() {
                 آسانی به سایر کشورها دارد.
               </p>
             </div>
-            <div className="text-center">
+            <div>
               <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <CalendarIcon className="w-8 h-8 text-green-600" />
               </div>
@@ -496,7 +499,7 @@ function CountryPage() {
                 {countryData.name} است.
               </p>
             </div>
-            <div className="text-center">
+            <div>
               <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <CurrencyDollarIcon className="w-8 h-8 text-purple-600" />
               </div>

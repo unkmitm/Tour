@@ -267,7 +267,7 @@ function SpecialOffers() {
                   className="absolute top-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-gray-50 transition-colors hover:scale-110"
                   type="button"
                   aria-label="Add to favorites"
-                  onClick={(e) => e.preventDefault()} 
+                  onClick={(e) => e.preventDefault()}
                 >
                   <HeartIcon className="w-5 h-5 text-gray-600" />
                 </button>

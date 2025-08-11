@@ -6,7 +6,9 @@ function TourCategories({ title, description, categories, basePath }) {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h1 className="text-5xl font-bold mb-6 text-gray-800">{title}</h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">{description}</p>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            {description}
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -28,10 +30,14 @@ function TourCategories({ title, description, categories, basePath }) {
                     {category.title}
                   </h3>
 
-                  <p className="text-gray-600 mb-4 leading-relaxed">{category.description}</p>
+                  <p className="text-gray-600 mb-4 leading-relaxed">
+                    {category.description}
+                  </p>
 
                   <div className="mb-4">
-                    <h4 className="font-semibold text-gray-700 mb-2">مقاصد محبوب:</h4>
+                    <h4 className="font-semibold text-gray-700 mb-2">
+                      مقاصد محبوب:
+                    </h4>
                     <div className="flex flex-wrap gap-2">
                       {category.tours.slice(0, 3).map((tour, index) => (
                         <span
@@ -48,7 +54,9 @@ function TourCategories({ title, description, categories, basePath }) {
                     <span className="text-blue-600 font-semibold group-hover:text-blue-700 transition-colors">
                       مشاهده تورها
                     </span>
-                    <span className="text-gray-400 group-hover:text-blue-600 transition-colors">→</span>
+                    <span className="text-gray-400 group-hover:text-blue-600 transition-colors">
+                      →
+                    </span>
                   </div>
                 </div>
               </div>
@@ -57,29 +65,41 @@ function TourCategories({ title, description, categories, basePath }) {
         </div>
 
         <div className="mt-16 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 text-center">
-          <h2 className="text-3xl font-bold mb-4 text-gray-800">چرا تورهای ما؟</h2>
+          <h2 className="text-3xl font-bold mb-4 text-gray-800">
+            چرا تورهای ما؟
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
             <div className="text-center">
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">🌟</span>
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-gray-800">کیفیت بالا</h3>
-              <p className="text-gray-600">تورهای با کیفیت و حرفه‌ای با بهترین خدمات</p>
+              <h3 className="text-xl font-semibold mb-2 text-gray-800">
+                کیفیت بالا
+              </h3>
+              <p className="text-gray-600">
+                تورهای با کیفیت و حرفه‌ای با بهترین خدمات
+              </p>
             </div>
 
             <div className="text-center">
               <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">💰</span>
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-gray-800">قیمت مناسب</h3>
-              <p className="text-gray-600">قیمت‌های رقابتی و مناسب برای همه سلیقه‌ها</p>
+              <h3 className="text-xl font-semibold mb-2 text-gray-800">
+                قیمت مناسب
+              </h3>
+              <p className="text-gray-600">
+                قیمت‌های رقابتی و مناسب برای همه سلیقه‌ها
+              </p>
             </div>
 
             <div className="text-center">
               <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">🛡️</span>
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-gray-800">امنیت کامل</h3>
+              <h3 className="text-xl font-semibold mb-2 text-gray-800">
+                امنیت کامل
+              </h3>
               <p className="text-gray-600">سفرهای امن و مطمئن با بیمه کامل</p>
             </div>
           </div>

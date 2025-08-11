@@ -1,10 +1,16 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { HeartIcon, StarIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
+import {
+  HeartIcon,
+  StarIcon,
+  ArrowRightIcon,
+} from "@heroicons/react/24/outline";
 
 const Feature = ({ bgColor, textColor, text }) => (
   <div className="flex items-center gap-3">
-    <div className={`${bgColor} w-8 h-8 rounded-full flex items-center justify-center`}>
+    <div
+      className={`${bgColor} w-8 h-8 rounded-full flex items-center justify-center`}
+    >
       <span className={`${textColor} font-bold text-sm`}>✓</span>
     </div>
     <span className="text-gray-700">{text}</span>
@@ -43,9 +49,21 @@ function LifeSection() {
   ];
 
   const features = [
-    { bgColor: "bg-blue-100", textColor: "text-blue-600", text: "تجربه‌های منحصر به فرد و شخصی‌سازی شده" },
-    { bgColor: "bg-green-100", textColor: "text-green-600", text: "راهنمایان محلی و متخصص" },
-    { bgColor: "bg-purple-100", textColor: "text-purple-600", text: "پشتیبانی ۲۴ ساعته در طول سفر" },
+    {
+      bgColor: "bg-blue-100",
+      textColor: "text-blue-600",
+      text: "تجربه‌های منحصر به فرد و شخصی‌سازی شده",
+    },
+    {
+      bgColor: "bg-green-100",
+      textColor: "text-green-600",
+      text: "راهنمایان محلی و متخصص",
+    },
+    {
+      bgColor: "bg-purple-100",
+      textColor: "text-purple-600",
+      text: "پشتیبانی ۲۴ ساعته در طول سفر",
+    },
   ];
 
   const stats = [
@@ -58,9 +76,12 @@ function LifeSection() {
     <div className="w-full bg-gradient-to-br from-blue-50 to-indigo-100 py-16 font-persian">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-12 rtl">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">زندگی را تجربه کنید</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            زندگی را تجربه کنید
+          </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            با تریپ جت، لحظات خاطره‌انگیز را در کنار عزیزانتان رقم بزنید و تجربه‌های جدیدی را کشف کنید
+            با تریپ جت، لحظات خاطره‌انگیز را در کنار عزیزانتان رقم بزنید و
+            تجربه‌های جدیدی را کشف کنید
           </p>
         </div>
 
@@ -77,10 +98,14 @@ function LifeSection() {
               aria-label="Add to favorites"
               type="button"
               className={`absolute top-4 right-4 w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
-                isLiked ? "bg-red-500 text-white shadow-lg" : "bg-white/80 text-gray-600 hover:bg-white"
+                isLiked
+                  ? "bg-red-500 text-white shadow-lg"
+                  : "bg-white/80 text-gray-600 hover:bg-white"
               }`}
             >
-              <HeartIcon className={`w-6 h-6 ${isLiked ? "fill-current" : ""}`} />
+              <HeartIcon
+                className={`w-6 h-6 ${isLiked ? "fill-current" : ""}`}
+              />
             </button>
 
             <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-2 flex items-center gap-2 shadow-lg">
@@ -91,10 +116,13 @@ function LifeSection() {
 
           <div className="space-y-8 rtl">
             <div>
-              <h3 className="text-3xl font-bold text-gray-900 mb-4 text-right">سفر به معنای واقعی</h3>
+              <h3 className="text-3xl font-bold text-gray-900 mb-4 text-right">
+                سفر به معنای واقعی
+              </h3>
               <p className="text-lg text-gray-600 leading-relaxed">
-                هر سفر داستان جدیدی است که باید روایت شود. با تریپ جت، شما نه تنها مقصد را می‌بینید،
-                بلکه فرهنگ، مردم و روح آن سرزمین را نیز تجربه می‌کنید.
+                هر سفر داستان جدیدی است که باید روایت شود. با تریپ جت، شما نه
+                تنها مقصد را می‌بینید، بلکه فرهنگ، مردم و روح آن سرزمین را نیز
+                تجربه می‌کنید.
               </p>
             </div>
 
@@ -106,7 +134,11 @@ function LifeSection() {
 
             <div className="pt-4">
               <button className="group bg-gradient-to-r  from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center gap-3 rtl">
-                <span>شروع سفر جدید</span>
+                <a href="login">
+                  {" "}
+                  {/* becase there is no backend*/}
+                  <span>شروع سفر جدید</span>
+                </a>
                 <ArrowRightIcon className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" />
               </button>
             </div>
@@ -120,9 +152,15 @@ function LifeSection() {
         </div>
 
         <div className="mt-20 rtl">
-          <h3 className="text-4xl font-extrabold text-gray-900 text-center mb-4">سایر تورهای تریپ جت</h3>
+          <h3 className="text-4xl font-extrabold text-gray-900 text-center mb-4">
+            سایر تورهای تریپ جت
+          </h3>
           <p className="text-gray-600 text-center max-w-4xl mx-auto mb-10 leading-relaxed">
-            برای افرادی که به تازگی پا به عرصه‌ی گردشگری گذاشته‌اند، سفر با تور بهترین گزینه است. راهنمایان تور، به خاطر تجربه‌های زیاد، اطلاعات دقیق از مقصد گردشگری دارند و شما را در شناخت بهتر مقصد همراهی می‌کنند. در این بخش می‌توانید برخی از محبوب‌ترین تورهای تریپ جت را ببینید.
+            برای افرادی که به تازگی پا به عرصه‌ی گردشگری گذاشته‌اند، سفر با تور
+            بهترین گزینه است. راهنمایان تور، به خاطر تجربه‌های زیاد، اطلاعات
+            دقیق از مقصد گردشگری دارند و شما را در شناخت بهتر مقصد همراهی
+            می‌کنند. در این بخش می‌توانید برخی از محبوب‌ترین تورهای تریپ جت را
+            ببینید.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

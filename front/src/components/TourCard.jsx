@@ -15,10 +15,10 @@ function TourCard({ tour }) {
         </h3>
 
         <div className="flex items-center justify-between mb-4">
+          <span className="text-lg font-bold text-green-600">{tour.price}</span>
           <span className="text-sm text-gray-600 bg-gray-100 px-3 py-1 rounded-full">
             {tour.duration}
           </span>
-          <span className="text-lg font-bold text-green-600">{tour.price}</span>
         </div>
 
         <div className="mb-4">

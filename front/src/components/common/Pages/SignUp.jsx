@@ -25,7 +25,7 @@ function Signup() {
     else if (
       !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(formData.email) // Validate email format
     )
-    newErrors.email = "ایمیل نامعتبر است.";
+      newErrors.email = "ایمیل نامعتبر است.";
     if (!formData.password) newErrors.password = "رمز عبور را وارد کنید.";
     else if (formData.password.length < 6)
       newErrors.password = "رمز عبور باید حداقل 6 کاراکتر باشد.";
@@ -38,7 +38,9 @@ function Signup() {
     e.preventDefault();
     const validationErrors = validate();
     if (Object.keys(validationErrors).length === 0) {
-      alert(`ثبت نام با موفقیت انجام شد!\nنام: ${formData.name}\nایمیل: ${formData.email} \n زمان ورود: ${formData.date}`);
+      alert(
+        `ثبت نام با موفقیت انجام شد!\nنام: ${formData.name}\nایمیل: ${formData.email} \n زمان ورود: ${formData.date}`
+      );
       setFormData({
         name: "",
         email: "",
@@ -59,7 +61,10 @@ function Signup() {
         </h2>
         <form onSubmit={handleSubmit} className="space-y-5">
           <div>
-            <label htmlFor="name" className="block mb-2 text-sm font-medium text-blue-700">
+            <label
+              htmlFor="name"
+              className="block mb-2 text-sm font-medium text-blue-700"
+            >
               نام
             </label>
             <input
@@ -69,15 +74,22 @@ function Signup() {
               value={formData.name}
               onChange={handleChange}
               className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 ${
-                errors.name ? "border-red-500 focus:ring-red-500" : "border-blue-300 focus:ring-blue-500"
+                errors.name
+                  ? "border-red-500 focus:ring-red-500"
+                  : "border-blue-300 focus:ring-blue-500"
               }`}
               placeholder="نام خود را وارد کنید"
             />
-            {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
+            {errors.name && (
+              <p className="text-red-500 text-xs mt-1">{errors.name}</p>
+            )}
           </div>
 
           <div>
-            <label htmlFor="email" className="block mb-2 text-sm font-medium text-blue-700">
+            <label
+              htmlFor="email"
+              className="block mb-2 text-sm font-medium text-blue-700"
+            >
               ایمیل
             </label>
             <input
@@ -87,15 +99,22 @@ function Signup() {
               value={formData.email}
               onChange={handleChange}
               className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 ${
-                errors.email ? "border-red-500 focus:ring-red-500" : "border-blue-300 focus:ring-blue-500"
+                errors.email
+                  ? "border-red-500 focus:ring-red-500"
+                  : "border-blue-300 focus:ring-blue-500"
               }`}
               placeholder="example@mail.com"
             />
-            {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
+            {errors.email && (
+              <p className="text-red-500 text-xs mt-1">{errors.email}</p>
+            )}
           </div>
 
           <div>
-            <label htmlFor="password" className="block mb-2 text-sm font-medium text-blue-700">
+            <label
+              htmlFor="password"
+              className="block mb-2 text-sm font-medium text-blue-700"
+            >
               رمز عبور
             </label>
             <input
@@ -105,15 +124,22 @@ function Signup() {
               value={formData.password}
               onChange={handleChange}
               className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 ${
-                errors.password ? "border-red-500 focus:ring-red-500" : "border-blue-300 focus:ring-blue-500"
+                errors.password
+                  ? "border-red-500 focus:ring-red-500"
+                  : "border-blue-300 focus:ring-blue-500"
               }`}
               placeholder="حداقل 6 کاراکتر"
             />
-            {errors.password && <p className="text-red-500 text-xs mt-1">{errors.password}</p>}
+            {errors.password && (
+              <p className="text-red-500 text-xs mt-1">{errors.password}</p>
+            )}
           </div>
 
           <div>
-            <label htmlFor="confirmPassword" className="block mb-2 text-sm font-medium text-blue-700">
+            <label
+              htmlFor="confirmPassword"
+              className="block mb-2 text-sm font-medium text-blue-700"
+            >
               تایید رمز عبور
             </label>
             <input
@@ -123,12 +149,16 @@ function Signup() {
               value={formData.confirmPassword}
               onChange={handleChange}
               className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 ${
-                errors.confirmPassword ? "border-red-500 focus:ring-red-500" : "border-blue-300 focus:ring-blue-500"
+                errors.confirmPassword
+                  ? "border-red-500 focus:ring-red-500"
+                  : "border-blue-300 focus:ring-blue-500"
               }`}
               placeholder="رمز عبور را دوباره وارد کنید"
             />
             {errors.confirmPassword && (
-              <p className="text-red-500 text-xs mt-1">{errors.confirmPassword}</p>
+              <p className="text-red-500 text-xs mt-1">
+                {errors.confirmPassword}
+              </p>
             )}
           </div>
 
