@@ -2,9 +2,9 @@ import { useState, useEffect, useRef } from "react";
 import {
   ChevronDownIcon,
   PhoneIcon,
-  MagnifyingGlassIcon,
   UserIcon,
-  ArrowLeftIcon,
+  Bars3Icon, 
+  XMarkIcon, 
 } from "@heroicons/react/24/outline";
 import Dropdown from "./pages/Dropdown";
 import { Link, useNavigate } from "react-router-dom";
@@ -41,6 +41,7 @@ const navItems = [
 
 function Header() {
   const [openDropdown, setOpenDropdown] = useState(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false); // اضافه شد
   const navigate = useNavigate();
   const headerRef = useRef(null);
 
@@ -89,8 +90,15 @@ function Header() {
             تریپ چت
           </Link>
         </div>
-        {/* Nav */}
-        <nav className="flex items-center gap-6">
+        {/* Hamburger icon for mobile */}
+        <button
+          className="md:hidden flex items-center p-2 rounded-lg hover:bg-gray-100 focus:outline-none"
+          onClick={() => setMobileMenuOpen(true)}
+        >
+          <Bars3Icon className="w-7 h-7 text-blue-700" />
+        </button>
+        {/* Nav for desktop */}
+        <nav className="hidden md:flex items-center gap-6">
           {navItems.map((item) => (
             <div key={item.id} className="relative">
               <button
@@ -127,6 +135,64 @@ function Header() {
           </Link>
         </nav>
       </header>
+      {/* Mobile menu drawer */}
+      {mobileMenuOpen && (
+        <div className="fixed inset-0 z-50 bg-opacity-40 flex justify-end md:hidden rtl">
+          <div className="w-full max-w-xs sm:max-w-sm md:max-w-md bg-white h-full shadow-lg flex flex-col animate-slideInRight rtl text-right">
+            <div className="flex flex-row-reverse items-center justify-between px-4 py-3 border-b">
+              <span className="text-2xl font-bold text-blue-700">تریپ چت</span>
+              <button
+                className="p-2 rounded-lg hover:bg-gray-100"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <XMarkIcon className="w-6 h-6 text-gray-700" />
+              </button>
+            </div>
+            <nav className="flex flex-col gap-2 p-4 text-right rtl">
+              {navItems.map((item) => (
+                <div key={item.id} className="relative text-right rtl">
+                  <button
+                    className="flex flex-row-reverse items-center justify-between w-full px-3 py-2 rounded-lg hover:bg-blue-50 text-right rtl"
+                    onClick={() => handleNavClick(item)}
+                  >
+                    <span>{item.label}</span>
+                    {item.dropdown.length > 0 && (
+                      <ChevronDownIcon className="w-5 h-5" />
+                    )}
+                  </button>
+                  {/* Dropdown for mobile */}
+                  {openDropdown === item.id && item.dropdown.length > 0 && (
+                    <div className="flex flex-col gap-1 bg-gray-50 rounded-lg mt-1 px-2 py-1 text-right rtl">
+                      {item.dropdown.map((sub) => (
+                        <button
+                          key={sub.path}
+                          className="flex flex-row-reverse items-center gap-2 px-2 py-1 rounded hover:bg-blue-100 text-sm text-right rtl"
+                          onClick={() => handleDropdownItemClick(sub.path)}
+                        >
+                          <span>{sub.icon}</span>
+                          <span>{sub.label}</span>
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+              <Link
+                to="/login"
+                className="flex flex-row-reverse items-center gap-2 px-3 py-2 rounded-lg bg-blue-50 text-blue-700 mt-4 text-right rtl"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <UserIcon className="w-5 h-5" /> ورود / ثبت نام
+              </Link>
+              <span className="flex flex-row-reverse items-center gap-2 px-3 py-2 mt-2 text-blue-700 text-right rtl">
+                <PhoneIcon className="w-5 h-5" /> 09392187181
+              </span>
+            </nav>
+          </div>
+          {/* کلیک روی پس‌زمینه منو را می‌بندد */}
+          <div className="flex-1" onClick={() => setMobileMenuOpen(false)} />
+        </div>
+      )}
       {/* Hero image placeholder */}
       <div
         className="w-full h-72 bg-cover bg-center flex items-center justify-center"
