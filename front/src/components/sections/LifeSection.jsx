@@ -91,21 +91,21 @@ function LifeSection() {
 
           <div className="space-y-8 rtl">
             <div>
-              <h3 className="text-3xl font-bold text-gray-900 mb-4">سفر به معنای واقعی</h3>
+              <h3 className="text-3xl font-bold text-gray-900 mb-4 text-right">سفر به معنای واقعی</h3>
               <p className="text-lg text-gray-600 leading-relaxed">
                 هر سفر داستان جدیدی است که باید روایت شود. با تریپ جت، شما نه تنها مقصد را می‌بینید،
                 بلکه فرهنگ، مردم و روح آن سرزمین را نیز تجربه می‌کنید.
               </p>
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-4 pt-4">
               {features.map((feature, idx) => (
                 <Feature key={idx} {...feature} />
               ))}
             </div>
 
             <div className="pt-4">
-              <button className="group bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center gap-3 rtl">
+              <button className="group bg-gradient-to-r  from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center gap-3 rtl">
                 <span>شروع سفر جدید</span>
                 <ArrowRightIcon className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" />
               </button>
