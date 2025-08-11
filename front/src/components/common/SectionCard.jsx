@@ -8,8 +8,9 @@ function SectionCard({ title, gradient, textColor, items, cols = 3 }) { // DRY
       <div className={`grid grid-cols-1 md:grid-cols-${cols} gap-8`}>
         {items.map((item, index) => (
           <div key={index} className="text-center">
+            {/* Optional */}
             {item.icon && (
-              <div className={`w-16 h-16 ${item.bgColor} rounded-full flex items-center justify-center mx-auto mb-4`}>
+              <div className={`w-16 h-16 ${item.bgColor} rounded-full flex items-center justify-center mx-auto mb-4`}> 
                 <span className="text-2xl">{item.icon}</span>
               </div>
             )}
