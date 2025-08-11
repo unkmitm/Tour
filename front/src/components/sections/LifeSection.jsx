@@ -7,13 +7,14 @@ import {
 } from "@heroicons/react/24/outline";
 
 const Feature = ({ bgColor, textColor, text }) => (
-  <div className="flex items-center gap-3">
+  <div className="flex items-center gap-3 flex-row-reverse">
+    {" "}
     <div
       className={`${bgColor} w-8 h-8 rounded-full flex items-center justify-center`}
     >
       <span className={`${textColor} font-bold text-sm`}>✓</span>
     </div>
-    <span className="text-gray-700">{text}</span>
+    <span className="text-gray-700 text-right">{text}</span>{" "}
   </div>
 );
 
@@ -27,10 +28,12 @@ const Stat = ({ value, label, color }) => (
 const TourLink = ({ title, to }) => (
   <Link
     to={{ pathname: to, search: "?ref=homepage" }}
-    className="flex items-center justify-between bg-white border rounded-2xl p-5 shadow-sm hover:shadow-md transition-all"
+    className="flex items-center justify-between bg-white border rounded-2xl p-5 shadow-sm hover:shadow-md transition-all flex-row-reverse"
   >
-    <span className="text-lg font-semibold text-gray-800">{title}</span>
-    <span className="text-gray-400">←</span>
+    <span className="text-lg font-semibold text-gray-800 text-right">
+      {title}
+    </span>
+    <span className="text-gray-400">→</span>{" "}
   </Link>
 );
 
@@ -132,14 +135,12 @@ function LifeSection() {
               ))}
             </div>
 
-            <div className="pt-4">
-              <button className="group bg-gradient-to-r  from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center gap-3 rtl">
-                <a href="login">
-                  {" "}
-                  {/* becase there is no backend*/}
+            <div className="pt-4 flex justify-end">
+              <button className="group bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center gap-3">
+                <a href="login" className="flex items-center gap-2">
                   <span>شروع سفر جدید</span>
+                  <ArrowRightIcon className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" />
                 </a>
-                <ArrowRightIcon className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" />
               </button>
             </div>
 
