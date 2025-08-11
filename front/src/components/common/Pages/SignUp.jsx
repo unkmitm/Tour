@@ -6,6 +6,7 @@ function Signup() {
     email: "",
     password: "",
     confirmPassword: "",
+    date: new Date().toISOString().slice(0, 10),
   });
 
   const [errors, setErrors] = useState({});
@@ -37,7 +38,7 @@ function Signup() {
     e.preventDefault();
     const validationErrors = validate();
     if (Object.keys(validationErrors).length === 0) {
-      alert(`ثبت نام با موفقیت انجام شد!\nنام: ${formData.name}\nایمیل: ${formData.email}`);
+      alert(`ثبت نام با موفقیت انجام شد!\nنام: ${formData.name}\nایمیل: ${formData.email} \n زمان ورود: ${formData.date}`);
       setFormData({
         name: "",
         email: "",
