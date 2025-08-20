@@ -58,6 +58,5 @@ npm run dev
 ![SECOND SCREEN](./front/src/assests/images/image1.png)
 ![THIRD SCREEN](./front/src/assests/images/image2.png)
 ![FORTH SCREEN](./front/src/assests/images/image3.png)
-![FORTH SCREEN](./front/src/assests/images/image3.png)
 ![FORTH SCREEN](./front/src/assests/images/image4.png)
 ![FORTH SCREEN](./front/src/assests/images/image5.png)
