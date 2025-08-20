@@ -1,4 +1,4 @@
-# 🧳 TripJet – Travel & Tour Booking Platform
+# 🧳 TripChat – Travel & Tour Booking Platform
 
 **TripJet** is a modern web application for booking, and exploring special travel offers for both domestic and international destinations.  
 It features a clean, responsive, and user-friendly interface designed to provide a smooth travel planning experience.
