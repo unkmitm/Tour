@@ -36,7 +36,7 @@ src/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/tripjet.git
+git clone https://github.com/unkmitm/tour.git
 cd front
 ```
 
@@ -55,6 +55,9 @@ npm run dev
 ## 📸 Screenshots
 
 ![FIRST SCREEN](./front/src/assests/images/image.png)
-![SECOND SCREEN](./front/src/assests/images/image-1.png)
-![THIRD SCREEN](./front/src/assests/images/image-2.png)
-![FORTH SCREEN](./front/src/assests/images/image-3.png)
+![SECOND SCREEN](./front/src/assests/images/image1.png)
+![THIRD SCREEN](./front/src/assests/images/image2.png)
+![FORTH SCREEN](./front/src/assests/images/image3.png)
+![FORTH SCREEN](./front/src/assests/images/image3.png)
+![FORTH SCREEN](./front/src/assests/images/image4.png)
+![FORTH SCREEN](./front/src/assests/images/image5.png)
