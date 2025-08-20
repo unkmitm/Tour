@@ -3,8 +3,8 @@ import {
   ChevronDownIcon,
   PhoneIcon,
   UserIcon,
-  Bars3Icon, 
-  XMarkIcon, 
+  Bars3Icon,
+  XMarkIcon,
 } from "@heroicons/react/24/outline";
 import Dropdown from "./pages/Dropdown";
 import { Link, useNavigate } from "react-router-dom";
@@ -87,7 +87,7 @@ function Header() {
         <div className="flex items-center gap-2">
           <span className="text-3xl font-bold text-yellow-400">📍</span>
           <Link to="/" className="text-2xl font-bold text-blue-700">
-            تریپ چت
+            تریپ جت
           </Link>
         </div>
         {/* Hamburger icon for mobile */}
@@ -202,7 +202,7 @@ function Header() {
         }}
       >
         <h1 className="text-5xl font-bold text-white drop-shadow-lg">
-          با تریپ چت، سفر با شماست!
+          با تریپ جت سفر با شماست!
         </h1>
       </div>
     </div>
